@@ -6,8 +6,26 @@ var elInputType = document.querySelector("[data-form-type]");
 var elInputWidth = document.querySelector("[data-form-width]");
 var elInputHeigth = document.querySelector("[data-form-heigth]");
 var elInputWeaknesses = document.querySelector("[data-form-weaknesses]");
-var elButtondelete = document.querySelector("[data-button]");
 renderPokemon();
+
+// toggle();
+
+// var elDeleteBtn = document.createElement("button");
+// var elDeleteBtnWrapper = document.createElement("div");
+
+// elDeleteBtn.classList.add("pokemon__delete");
+
+// elDeleteBtn.type = "button";
+// elDeleteBtn.textContent = "Delete";
+
+// elCard.appendChild(elDeleteBtnWrapper);
+// elDeleteBtnWrapper.appendChild(elDeleteBtn);
+
+// function toggle() {
+//   elDeleteBtn.addEventListener("click", function (evt) {
+//     elCard.classList.toggle("visually-hidden");
+//   });
+// }
 
 function renderPokemon() {
   for (var i = 0; i < pokemons.length; i++) {
@@ -76,6 +94,7 @@ function cretePokemon(pokemon) {
   elImg.classList.add("pokemon__img");
   elImg.classList.add("card-img-top");
   elImgDiv.classList.add("pokemon__img-box");
+
   elImg.alt = `${pokemon.name}`;
   elImg.width = 157;
   elImg.height = 157;

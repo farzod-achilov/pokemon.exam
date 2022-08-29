@@ -59,7 +59,9 @@ form {
 }
 .pokemon__card .pokemon__content-wrapper {
   padding-top: 25px;
+  padding-bottom: 30px;
   display: flex;
+  justify-content: space-between;
 }
 .pokemon__card .pokemon__img-box {
   border-bottom: 3px solid #000;
@@ -67,6 +69,13 @@ form {
   display: flex;
   justify-content: center;
   padding-bottom: 68px;
+}
+.pokemon__card .pokemon__delete {
+  display: inline-block;
+  max-width: 200px;
+  background-color: red;
+  border: 1px solid red;
+  color: white;
 }
 .pokemon__card img {
   width: 175px;
