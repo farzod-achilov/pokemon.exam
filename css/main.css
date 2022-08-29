@@ -6,6 +6,10 @@ form {
   justify-content: center;
 }
 
+.pokemon {
+  margin-top: 100px;
+}
+
 .pokemon__card {
   max-width: 280px;
   padding: 0;
@@ -13,6 +17,7 @@ form {
   border: 2px solid #000000;
   border-radius: 20px;
   margin: 0 10px;
+  margin-bottom: 30px;
 }
 .pokemon__card .pokemon__content {
   padding: 0;
@@ -75,8 +80,33 @@ button {
   background: #ffffff;
   border: 2px solid #000000;
   border-radius: 15px;
+  font-size: 24px;
 }
 
+@media (max-width: 700px) {
+  .container {
+    max-width: 0;
+  }
+  form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+    flex-direction: column;
+  }
+  .pokemon {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    align-items: center;
+  }
+  .col-3 {
+    width: 100%;
+  }
+  label {
+    max-width: 260px;
+  }
+}
 * {
   box-sizing: border-box;
 }
