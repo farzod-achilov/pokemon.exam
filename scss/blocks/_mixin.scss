@@ -1,0 +1,28 @@
+@mixin pokemon($name) {
+  margin: 0;
+  padding: 0;
+  @if $name == name {
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 28px;
+    color: #000000;
+  } @else if $name == type {
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 23px;
+
+    color: #000000;
+  } @else if $name == weight {
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 28px;
+
+    color: #000000;
+  }
+}
