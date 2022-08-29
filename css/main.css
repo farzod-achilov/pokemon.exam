@@ -38,6 +38,7 @@ form {
   font-size: 20px;
   line-height: 23px;
   color: #000000;
+  padding: 3px 0;
 }
 .pokemon__card .pokemon__content-weight {
   margin: 0;

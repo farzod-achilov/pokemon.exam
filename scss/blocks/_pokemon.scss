@@ -25,6 +25,7 @@ form {
 
   .pokemon__content-type {
     @include pokemon(type);
+    padding: 3px 0;
   }
 
   .pokemon__content-weight {
