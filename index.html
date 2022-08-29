@@ -28,19 +28,51 @@
             <img src="./img/pokemon_logo 1.png" alt="logo" />
           </a>
         </h1>
-        <form action="/">
+        <form action="/" data-form>
+          <label for="img">
+            <input type="text" id="img" data-form-img placeholder="Imgae URL" />
+          </label>
           <label for="name">
-            <input type="text" />
+            <input
+              type="text"
+              id="name"
+              data-form-name
+              placeholder="For name"
+            />
           </label>
           <label for="type">
-            <input type="text" />
+            <input
+              type="text"
+              id="type"
+              placeholder="For Type"
+              data-form-type
+            />
+            <label for="weaknesses">
+              <input
+                type="text"
+                id="weaknesses"
+                placeholder="For weaknesses"
+                data-form-weaknesses
+              />
+            </label>
           </label>
           <label for="width">
-            <input type="text" />
+            <input
+              type="text"
+              id="width"
+              placeholder="For width"
+              data-form-width
+            />
           </label>
           <label for="heigth">
-            <input type="text" />
+            <input
+              type="text"
+              id="heigth"
+              placeholder="For heigth"
+              data-form-heigth
+            />
           </label>
+          <button type="submit">ADD</button>
         </form>
       </div>
     </header>
