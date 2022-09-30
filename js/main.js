@@ -53,9 +53,9 @@ function cretePokemon(pokemon) {
   var elCardImg = elCard.querySelector("img");
   var elButtonDelete = elCard.querySelector("[data-card-delate]");
 
-  elButtonDelete.addEventListener("click", (evt) => {
-    elButtonDelete.closest(".card").remove();
-  });
+  // elButtonDelete.addEventListener("click", (evt) => {
+  //   elButtonDelete.closest(".card").remove();
+  // });
 
   elCardImg.src = pokemon.img;
   elCardImg.alt = pokemon.name;
