@@ -6,33 +6,15 @@ var elInputType = document.querySelector("[data-form-type]");
 var elInputWidth = document.querySelector("[data-form-width]");
 var elInputHeigth = document.querySelector("[data-form-heigth]");
 var elInputWeaknesses = document.querySelector("[data-form-weaknesses]");
-renderPokemon();
+var elInputSearch = document.querySelector("[data-form-search]");
+var elTemplate = document.querySelector("[data-template]");
+renderPokemon(pokemons);
 
-// toggle();
-
-// var elDeleteBtn = document.createElement("button");
-// var elDeleteBtnWrapper = document.createElement("div");
-
-// elDeleteBtn.classList.add("pokemon__delete");
-
-// elDeleteBtn.type = "button";
-// elDeleteBtn.textContent = "Delete";
-
-// elCard.appendChild(elDeleteBtnWrapper);
-// elDeleteBtnWrapper.appendChild(elDeleteBtn);
-
-// function toggle() {
-//   elDeleteBtn.addEventListener("click", function (evt) {
-//     elCard.classList.toggle("visually-hidden");
-//   });
-// }
-
-function renderPokemon() {
-  for (var i = 0; i < pokemons.length; i++) {
-    var pokemon = pokemons[i];
-
+function renderPokemon(pPokemons) {
+  elList.innerHTML = "";
+  pPokemons.forEach((pokemon) => {
     elList.appendChild(cretePokemon(pokemon));
-  }
+  });
 }
 
 elForm.addEventListener("submit", function (evt) {
@@ -67,41 +49,48 @@ elForm.addEventListener("submit", function (evt) {
 });
 
 function cretePokemon(pokemon) {
-  var elCard = document.createElement("div");
-  var elImg = document.createElement("img");
-  var elDiv = document.createElement("div");
-  var elImgDiv = document.createElement("div");
+  var elCard = elTemplate.content.cloneNode(true);
+  var elCardImg = elCard.querySelector("img");
+  var elButtonDelete = elCard.querySelector("[data-card-delate]");
 
-  elImg.src = `${pokemon.img}`;
-  elDiv.innerHTML = `
-  <h2 class="card-title pokemon__card-header">${pokemon.name}
-  </h2>
-  <p class="card-text pokemon__content-type">${pokemon.type}</p>
-  <p class="card-text pokemon__content-type">${pokemon.weaknesses}</p>
-  <div class="pokemon__content-wrapper">
-  <h3 class="card-text pokemon__content-weight">${pokemon.height}</h3>
-  <h3 class="card-text pokemon__content-weight">${pokemon.weight}</h3>
-  </div>
-  `;
+  elButtonDelete.addEventListener("click", (evt) => {
+    elButtonDelete.closest(".card").remove();
+  });
 
-  elCard.classList.add("pokemon__card");
-  elCard.classList.add("col-3");
-  elCard.classList.add("card");
-  elCard.classList.add("pokemon__card");
-  elList.classList.add("row");
-  elDiv.classList.add("pokemon__content");
-  elDiv.classList.add("card-body");
-  elImg.classList.add("pokemon__img");
-  elImg.classList.add("card-img-top");
-  elImgDiv.classList.add("pokemon__img-box");
-
-  elImg.alt = `${pokemon.name}`;
-  elImg.width = 157;
-  elImg.height = 157;
-
-  elImgDiv.appendChild(elImg);
-  elCard.appendChild(elDiv);
-  elCard.prepend(elImgDiv);
+  elCardImg.src = pokemon.img;
+  elCardImg.alt = pokemon.name;
+  elCard.querySelector("[data-card-name]").textContent = pokemon.name;
+  elCard.querySelector("[data-card-type]").textContent = joinArray(
+    pokemon.type,
+    ", "
+  );
+  elCard.querySelector("[data-card-weidth]").textContent = pokemon.weight;
+  elCard.querySelector("[data-card-heigth]").textContent = pokemon.height;
+  elCard.querySelector("[data-card-weaknesses]").textContent =
+    pokemon.weaknesses;
 
   return elCard;
+}
+
+elInputSearch.addEventListener("keyup", (evt) => {
+  var newPokemons = [];
+  pokemons.forEach((pokemon) => {
+    if (pokemon.name.includes(elInputSearch.value)) {
+      newPokemons.push(pokemon);
+    }
+  });
+
+  renderPokemon(newPokemons);
+});
+
+function joinArray(arr, separator = "") {
+  var str = "";
+  for (let i = 0; i < arr.length; i++) {
+    str += arr[i];
+
+    if (i !== arr.length - 1) {
+      str += separator;
+    }
+  }
+  return str;
 }

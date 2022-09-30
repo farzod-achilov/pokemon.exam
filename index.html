@@ -73,13 +73,55 @@
             />
           </label>
           <button type="submit">ADD</button>
+          <label for="heigth">
+            <input
+              type="text"
+              id="heigth"
+              placeholder="Search"
+              data-form-search
+            />
+          </label>
         </form>
       </div>
     </header>
     <main>
       <section>
         <div class="container">
-          <div class="pokemon" data-pokemon-list></div>
+          <div class="pokemon" data-pokemon-list>
+            <template data-template>
+              <div class="pokemon__card col-3 card">
+                <div class="pokemon__img-box">
+                  <img
+                    class="pokemon__img card-img-top"
+                    width="157"
+                    height="157"
+                  />
+                </div>
+                <div class="pokemon__content card-body">
+                  <h2
+                    data-card-name
+                    class="card-title pokemon__card-header"
+                  ></h2>
+                  <p data-card-type class="card-text pokemon__content-type"></p>
+                  <p
+                    data-card-weaknesses
+                    class="card-text pokemon__content-type"
+                  ></p>
+                  <div class="pokemon__content-wrapper">
+                    <h3
+                      data-card-weidth
+                      class="card-text pokemon__content-weight"
+                    ></h3>
+                    <h3
+                      data-card-heigth
+                      class="card-text pokemon__content-weight"
+                    ></h3>
+                  </div>
+                  <button data-card-delate class="btn btn-danger">Delate</button>
+                </div>
+              </div>
+            </template>
+          </div>
         </div>
       </section>
     </main>

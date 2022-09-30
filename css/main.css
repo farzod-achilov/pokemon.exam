@@ -6,8 +6,16 @@ form {
   justify-content: center;
 }
 
+.btn {
+  max-width: 200px;
+}
+
 .pokemon {
   margin-top: 100px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
 }
 
 .pokemon__card {
