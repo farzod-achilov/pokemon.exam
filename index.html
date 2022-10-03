@@ -29,6 +29,7 @@
           </a>
         </h1>
         <form action="/" data-form>
+          
           <label for="img">
             <input type="text" id="img" data-form-img placeholder="Imgae URL" />
           </label>
@@ -82,6 +83,15 @@
             />
           </label>
         </form>
+        <form data-filter-form>
+          <select name="pokemon_filter" id="pokemon_filter" data-form-select>
+            <option data-form-option value="Tanla">Tanla</option>
+            <option data-form-option value="Grass">Grass</option>
+            <option data-form-option value="Poison">Poison</option>
+            <option data-form-option value="FIre">Fire</option>
+          </select>
+          <button  type="submit">Filter</button>
+        </form>
       </div>
     </header>
     <main>
@@ -117,7 +127,9 @@
                       class="card-text pokemon__content-weight"
                     ></h3>
                   </div>
-                  <button data-card-delate class="btn btn-danger">Delate</button>
+                  <button data-card-delate class="btn btn-danger">
+                    Delate
+                  </button>
                 </div>
               </div>
             </template>
