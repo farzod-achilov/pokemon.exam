@@ -19,7 +19,7 @@ form {
 }
 
 .pokemon__card {
-  max-width: 280px;
+  max-width: 350px;
   padding: 0;
   background: #ffffff;
   border: 2px solid #000000;
@@ -85,12 +85,18 @@ form {
   border: 1px solid red;
   color: white;
 }
+
+.card-text {
+  display: flex;
+  flex-wrap: nowrap;
+}
 .pokemon__card img {
   width: 175px;
   height: 175px;
 }
 
 input,
+select,
 button {
   width: 260px;
   height: 60px;
@@ -148,7 +154,7 @@ body {
   padding: 0;
   white-space: nowrap;
   -webkit-clip-path: inset(100%);
-          clip-path: inset(100%);
+  clip-path: inset(100%);
   clip: rect(0 0 0 0);
   overflow: hidden;
-}/*# sourceMappingURL=main.css.map */
+} /*# sourceMappingURL=main.css.map */
