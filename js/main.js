@@ -62,7 +62,6 @@ elForm.addEventListener("submit", function (evt) {
   pokemon.height = elInputHeigth.value;
   pokemon.weight = elInputWidth.value;
 
-  console.log(pokemon);
 
   pokemons.unshift(pokemon);
 
